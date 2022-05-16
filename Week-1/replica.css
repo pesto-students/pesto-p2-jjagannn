@@ -1,16 +1,22 @@
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
 div.overall-wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-div.nav-wrapper {
+.main-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    height: 100%;
+    width: 95%;
 }
 
 .sidebar {
@@ -27,10 +33,16 @@ div.nav-wrapper {
     border: 10px;
 }
 
+.sidebar i:hover {
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
 .song-highlight {
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 95.5%;
     background-color: grey;
 }
 
@@ -68,6 +80,7 @@ span.album-summary {
 
 .play-options {
     position: relative;
+    left: -2%;
     top: 50%;
 }
 
@@ -75,3 +88,26 @@ span.album-summary {
     padding: 10px;
     color: white;
 }
+
+.play-options span:hover {
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+.table-breakdown {
+    height: 100%;
+    /* width: 90vw; */
+    /* position: relative; */
+    /* left: 20%; */
+    /* border-collapse: collapse; */
+}
+
+/* .tab-row {
+    margin: 12px;
+    border: 12px;
+    padding: 12px;
+}
+.tab-row th {
+    padding: 12px;
+} */
