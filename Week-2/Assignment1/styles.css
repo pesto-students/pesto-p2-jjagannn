@@ -51,10 +51,17 @@ footer {
 .article-sub a {
     text-decoration: none;
     border: 1px dotted;
+    color: blue;
+}
+.article-sub a:visited {
+    color: grey;
+}
+.article-sub a:hover {
+    color: blue;
 }
 
 /* Media Query for Mobile Devices */
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
     body {
         background-color: lightsalmon;
     }
