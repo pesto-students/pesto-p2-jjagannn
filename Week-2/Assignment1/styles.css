@@ -24,7 +24,6 @@ body {
     margin-bottom: 8px;
     padding: 10px;
     border: 1px thick solid;
-
 }
 
 article > h3, article > span {
@@ -57,6 +56,9 @@ footer {
     color: grey;
 }
 .article-sub a:hover {
+    color: blue;
+}
+.article-sub a:link {
     color: blue;
 }
 

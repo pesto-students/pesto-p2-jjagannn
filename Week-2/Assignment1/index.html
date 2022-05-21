@@ -6,6 +6,7 @@
         <meta name="keywords" content="Sports, Football, Basketball, Review, Blog">
         <meta name="author" content="JaganJ">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta http-equiv="refresh" content="30"> -->
         <title>Sports reviews & blog</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="formStyles.css">
@@ -19,6 +20,7 @@
         <main>
             <!-- Article section -->
             <article class="articles">
+                <!-- Sub-articles * 6 -->
                 <article class="article-sub">
                     <h3 class="article-title">VAR not the villian for Spurs</h3>
                     <summary>Match Recap: Tottenham Spurs and Leicester City (1-2)</summary>
@@ -51,6 +53,7 @@
             <!-- Form Content -->
             <form action="https://www.google.co.in/" id="userdetailsform" target="_blank">
                 <h3>User Details Form:</h3>
+                <!-- title -->
                 <label for="titleRadio">Title: </label>
                 <span id="titleRadio">
                     <label class="radio" for="mr">Mr</label>
@@ -60,18 +63,21 @@
                     <label class="radio" for="miss">Miss</label>
                     <input type="radio" id="miss" name="name_title" value="miss"><br>
                 </span>
+                <!-- firstname -->
                 <label for="fname">First name:</label>
-                <input type="text" id="fname" name="fname"><br>
+                <input type="text" id="fname" name="fname" required minlength="3" maxlength="20"><br>
+                <!-- lastname -->
                 <label for="lname">Last name:</label>
-                <input type="text" id="lname" name="lname"><br>
+                <input type="text" id="lname" name="lname" minlength="0" maxlength="20"><br>
                 <!-- email -->
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email"><br>
+                <input type="email" id="email" name="email" required minlength="8" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+                <!-- phone -->
                 <label for="phonenumber">Phone number:</label>
-                <input type="number" id="phonenumber" name="phonenumber"><br>
+                <input type="tel" id="phonenumber" name="phonenumber" minlength="7" maxlength="20"><br>
                 <!-- Password -->
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password"><br>
+                <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
                 <!-- Country selection -->
                 <label for="country">Country:</label>
                 <select name="country" id="country" form="userdetailsform">
@@ -81,10 +87,10 @@
                   <option value="audi">Others</option>
                 </select><br>
                 <!-- Agree to T&C -->
-                <input type="checkbox" id="termsnconditions" name="termsnconditions" value="agree">
+                <input type="checkbox" id="termsnconditions" name="termsnconditions" value="agree" required>
                 <label id="tnclabel" for="termsnconditions"> I agree to the <a target="_blank" href="https://www.google.com/">terms and conditions</a></label><br>
                 <!-- Submit -->
-                <button type="submit" value="submit" id="signup">Sign up</button>
+                <input type="submit" value="Sign Up" id="signup">
             </form>
         </main>
 
