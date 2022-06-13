@@ -1,0 +1,30 @@
+{
+  "name": "Assignment5.4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "math-calculations.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "keywords": [],
+  "author": "JaganJ",
+  "license": "MIT",
+  "dependencies": {
+    "D": "^1.0.0",
+    "jest": "^28.1.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.1"
+  }
+}
