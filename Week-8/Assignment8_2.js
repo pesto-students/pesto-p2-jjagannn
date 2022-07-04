@@ -9,49 +9,30 @@
 //  Example 2:
 //     Input: root = [5,1,4,null,null,3,6]Output: falseExplanation: The root node's value is 5 but its right child's value is 4.
 
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
 
-class TreeNode{
-    constructor(value){
-      this.value = (value === undefined ? 0 : value);
-      this.left = null;
-      this.right = null;
+
+ function isValidBST(root, min=null, max=null){
+    if(root === null){
+      return true; //when [] or when dealing with last node
     }
+    if(min && root.val <= min.val){
+      return false;
+    }
+    if(max && root.val >= max.val){
+      return false;
+    }
+  
+    return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
   }
-  
-  function isValidBST(root){
-      let startNode = insertIntoTree(0,root);
-      let result = null;
-      result = preorder(startNode);
-      if (result === false){
-          return false;
-      }
-      return true;
-  }
-  
-  function insertIntoTree(i, arr){
-      let curr = null;
-      if(i < arr.length){
-          curr = new TreeNode(arr[i]);
-          curr.left = insertIntoTree(2*i+1, arr);
-          curr.right = insertIntoTree(2*i+2, arr);
-      }
-      return curr;
-  }
-  
-  
-  var preorder = function(root) {
-      if (root !== null){
-          root.left = preorder(root.left);
-          root.right = preorder(root.right);
-          if ((root < root.left && root < root.right) || (root > root.left && root > root.right)){
-              return false;
-          }
-      }
-  };
-  
-  //Test code
-  //Edge cases
-  //when arr is empty
-  //when leaf node has null,null
-  // when leaf node has null, value
-  // when leaf node has value, value
