@@ -6,7 +6,7 @@ const Todo = ( {todo, remove, update, toggleComplete} ) => {
     const [task, setTask] = useState(todo.task)
 
     const handleClick = e => {
-        console.log(e.target.id)
+        console.log(e.target.id === '')
         remove(e.target.id)
     }
 
@@ -51,7 +51,7 @@ const Todo = ( {todo, remove, update, toggleComplete} ) => {
                     <button onClick={toggleForm}>
                         <i className="fas fa-pen" />
                     </button>
-                    <button onClick={handleClick}>
+                    <button id={todo.id} onClick={handleClick}>
                         <i className="fas fa-trash" />
                     </button>
                 </div>

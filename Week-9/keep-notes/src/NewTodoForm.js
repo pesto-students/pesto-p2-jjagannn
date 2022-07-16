@@ -21,7 +21,7 @@ const NewTodoForm = ({ createTodo }) => {
 
     return (
         <form className="NewTodoForm" onSubmit={handleSubmit}>
-            <label>New Todo</label>
+            {/* <label>New Todo </label> */}
             <input
                 value={userInput.task}
                 onChange={handleChange}

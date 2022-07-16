@@ -7,14 +7,14 @@ const ToDoList = () => {
     const [todos, setTodos] = useState([]);
 
     const remove = id => {
-        console.log(id)
+        // console.log(id)
         setTodos(todos.filter(todo => todo.id !== id));
     }
 
     const update = (id, updatedTask) => {
         const updatedTodos = todos.map(todo => {
             if(todo.id === id){
-                console.log(...todo)
+                // console.log(...todo)
                 return {...todo, task: updatedTask}
             }
             return todo
@@ -35,7 +35,7 @@ const ToDoList = () => {
     const create = newTodo => {
         setTodos([...todos, newTodo]);
     }
-    console.log(todos)
+    // console.log(todos)
 
     const todosList = todos.map(todo => (
         <Todo
@@ -47,11 +47,11 @@ const ToDoList = () => {
         />
     ))
 
-    console.log(todos)
+    // console.log(todos)
 
     return (
         <div className="TodoList">
-            <h1>Simple React Todo List</h1>
+            <h1>React Sticky Notes</h1>
             <NewTodoForm createTodo={create} />
             <ul>{todosList}</ul>
         </div>
