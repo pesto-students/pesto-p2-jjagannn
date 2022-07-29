@@ -3,16 +3,19 @@ import { React } from "react";
 //Functional
 export default function Room(props) {
   // const [isLightOn, setIsLightOn] = useState(true);
-  const { isLightOn = true, dispatch } = props;
+  const { isLightOn, dispatch } = props;
+  console.log(props)
+  //action1
   function changeLight(lightStatus) {
     return {
       type: "CHANGE_LIGHT",
       isLightOn: lightStatus
     };
   }
+    //action2
   const flipLight = () => {
-    console.log(isLightOn);
-    dispatch(changeLight(!isLightOn));
+    // console.log(isLightOn);
+    dispatch(changeLight(isLightOn));
   };
   const lightedness = isLightOn ? "lit" : "dark";
 
