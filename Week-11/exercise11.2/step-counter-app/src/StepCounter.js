@@ -1,22 +1,22 @@
 function StepCounter(props){
     const { counter, dispatch } = props;
 
-    const handleIncrement = (counter) => {
+    const handleIncrement = () => {
         dispatch(increase(counter));
     }
-    function increase(counter){
+    function increase(){
         return {
             type: "INCREASE_COUNT",
-            count: counter
+            counter: counter
         };
     }
     const handleDecrement = () => {
         dispatch(decrease(counter));
     }
-    function decrease(counter){
+    function decrease(){
         return {
             type: "DECREASE_COUNT",
-            count: counter
+            counter: counter
         };
     }
 

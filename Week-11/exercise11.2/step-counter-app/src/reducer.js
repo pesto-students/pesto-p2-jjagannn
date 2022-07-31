@@ -1,7 +1,8 @@
 let initialState = { counter: 0 };
 
 function stepCountReducer(currentState=initialState, action){
-
+    console.log(action)
+    console.log(currentState)
     switch (action.type){
         case "INCREASE_COUNT":{
             return { counter: action.counter + 1 };
