@@ -44,4 +44,29 @@ router.get('/logout', (req,res)=>{
     })
 })
 
+//Finance Transactions
+router.post('/sendPayment', (req,res)=>{
+    if (req.body.email) {
+        //add more conditions in 'if' to control payment
+        try {
+            db.promise().query("INSERT INTO LEDGER(acc_id,cat_id, trans_type, amount) VALUES(1133226, 2, 'DEB', 12000)")
+        } catch (error) {
+            console.log(error)
+        }
+        res.redirect('/route/dashboard')
+    } else {
+        res.end("Unable to complete transaction")
+    }
+})
+
+router.get('/getAccountHistory', (req,res) => {
+    try {
+        let accData = db.promise().query(`SELECT * FROM ACCOUNT WHERE account_id = 1133226`)
+        res.status(200).send(accData)
+    } catch (error) {
+        console.log(error)
+    }
+    res.redirect('/route/dashboard')
+})
+
 module.exports = router
