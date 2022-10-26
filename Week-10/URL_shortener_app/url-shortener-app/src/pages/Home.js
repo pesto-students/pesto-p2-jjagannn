@@ -20,30 +20,30 @@ const Home = () => {
   };
 
   const handleAsyncFetch = async () => {
-    // try {
-    // console.log(window.device.version);
-    console.log("started");
-    setIsLoading(!isLoading);
-    let shortenedData = await fetch(
-      `https://api.shrtco.de/v2/shorten?url=${url}`
-    );
-    console.log(shortenedData);
-    let shortData = await shortenedData.json();
-    console.log(shortData);
-    if (shortData.ok) {
-      setShortInfo(shortData.result);
-      console.log("Set completed!");
-      console.log(shortInfo);
-    } else if (shortData.ok === false) {
-      setShortInfo({
-        full_short_link: shortData.error,
-        code: `Error code --> ${shortData.error_code}`
-      });
+    try {
+      console.log(window.device.version);
+      console.log("started");
+      setIsLoading(!isLoading);
+      let shortenedData = await fetch(
+        `https://api.shrtco.de/v2/shorten?url=${url}`
+      );
+      console.log(shortenedData);
+      let shortData = await shortenedData.json();
+      console.log(shortData);
+      if (shortData.ok) {
+        setShortInfo(shortData.result);
+        console.log("Set completed!");
+        console.log(shortInfo);
+      } else if (shortData.ok === false) {
+        setShortInfo({
+          full_short_link: shortData.error,
+          code: `Error code --> ${shortData.error_code}`
+        });
+      }
+      setIsLoading(!isLoading);
+    } catch (err) {
+      console.log(`Error: ${err}`);
     }
-    setIsLoading(!isLoading);
-    // } catch (err) {
-    //   console.log(`Error: ${err}`);
-    // }
   };
 
   const showUrlInfo = [shortInfo].map((data, i) => {
