@@ -5,18 +5,24 @@ const initialState = {isLightOn: true};
 //set default values in reducer level
 
 export function lightReducer(currentState = initialState, action) {
-  console.log(action);
-  console.log(action.type);
-  switch (action.type) {
+  // console.log(action);
+  // console.log(action.type);
+  switch (action.type) { //changeLight.type
+    //handles different conditions and decides how the state should be changed
     case "CHANGE_LIGHT": {
-      return { isLightOn: !action.isLightOn };
+      return { isLightOn: !currentState.isLightOn }; //true --> (!true) --> false.
+    }
+    case "CHANGE_ROOM_COLOR": {
+      return { isLightOn: !currentState.isLightOn };
     }
     default: {
       return currentState;
     }
   }
 }
+//dispatch("CHANGE_ROOM_COLOR")
 // sepObj = {}
+//createStore -- creating store object 
 const store = configureStore({reducer: lightReducer})
 
 export { store };
