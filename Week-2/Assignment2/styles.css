@@ -1,0 +1,65 @@
+.message {
+    text-align: center;
+    position: absolute;
+    font-weight: 600;
+    font-size: 32px;
+    z-index: -1;
+}
+
+div[class^="top"], div[class^="bot"] {
+    width: 100px;
+    height: 100px;
+}
+
+.upperrow, .lowerrow {
+    display: flex;
+    justify-content: center;
+}
+
+.main:hover .topleft{
+    animation-name: rottopleft;
+    animation-duration: 3s;
+}
+
+.main:hover .topright{
+    animation-name: rottopright;
+    animation-duration: 3s;
+}
+
+.main:hover .botleft{
+    animation-name: rotbotleft;
+    animation-duration: 3s;
+}
+
+.main:hover .botright{
+    animation-name: rotbotright;
+    animation-duration: 3s;
+}
+
+@keyframes rottopleft {
+    100% {
+        transform: rotate(90deg);
+        transform-origin: top left;
+    }
+}
+
+@keyframes rottopright {
+    100% {
+        transform: rotate(-90deg);
+        transform-origin: top right;
+    }
+}
+
+@keyframes rotbotleft {
+    100% {
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+    }
+}
+
+@keyframes rotbotright {
+    100% {
+        transform: rotate(90deg);
+        transform-origin: bottom right;
+    }
+}
