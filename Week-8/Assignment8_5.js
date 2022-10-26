@@ -16,7 +16,7 @@
  * @param {number[][]} trust
  * @return {number}
  */
- var findJudge = function(n, trust) {
+const findJudge = function(n, trust) {
     let counts = new Array(n+1).fill(0);
     
     for(let [p,j] of trust){
