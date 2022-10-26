@@ -30,7 +30,7 @@ const Todo = ( {todo, remove, update, toggleComplete} ) => {
 
     let result;
     if (isEditing){
-        result = (
+        return (
             <div className="Todo">
                 <form className="Todo-edit-form" onSubmit={handleUpdate}>
                     <input value={task} onChange={handleChange}/>
@@ -39,7 +39,7 @@ const Todo = ( {todo, remove, update, toggleComplete} ) => {
             </div>
         )
     } else {
-        result = (
+        return (
             <div className="Todo">
                 <li 
                     id={todo.id} 
@@ -58,7 +58,6 @@ const Todo = ( {todo, remove, update, toggleComplete} ) => {
             </div>
         )
     }
-    return result
 }
 
 export default Todo
